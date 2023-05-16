@@ -1,5 +1,5 @@
-let gameBoard = [null, null, null, null, null, null, null, null]
-let playerTurn = 'X';
+let gameBoard = new Array(9).fill(null);
+let playerTurn = 'O';
 function whosMoveIsIt () {
     if(playerTurn == 'X') {
         return 'O';
@@ -9,16 +9,22 @@ function whosMoveIsIt () {
 
 }
 
+
+
 function makeAMove() {
     
    do {
-        } while (!playerHasWon) {
-            let lastMove = prompt(`Make a move ${playerTurn}: `);
-            push.gameBoard(playerTurn[lastMove - 1]);
-            let playerTurn = whosMoveIsIt();
+            let lastMove = prompt(`Make a move ${whosMoveIsIt()}: `);
+            gameBoard.splice(lastMove - 1, 1, whosMoveIsIt());
+            playerTurn = whosMoveIsIt();
+        } while (!hasPlayerWon(playerTurn, gameBoard))
+
+        if(hasPlayerWon(playerTurn, gameBoard)) {
+            return gameOver();
         }
-    
 };
+
+
 
 function hasPlayerWon(playerTurn, gameBoard) {
     let winnerCombos = [
@@ -33,9 +39,9 @@ function hasPlayerWon(playerTurn, gameBoard) {
 ];
 
 for(let [i1, i2, i3] of winnerCombos) {
-    if(winnerCombos[i1] === playerTurn &&
-       winnerCombos[i1] === winnerCombos[i2] &&
-       winnerCombos[i1] === winnerCombos[i3]) {
+    if(gameBoard[i1] === playerTurn &&
+       gameBoard[i1] === gameBoard[i2] &&
+       gameBoard[i1] === gameBoard[i3]) {
         return true;
        }
        return false;
@@ -43,8 +49,10 @@ for(let [i1, i2, i3] of winnerCombos) {
 
 };
 
+
 function gameOver() {
-    if(hasPlayerWon) {
-        return `Player ${playerTurn} has won!`;
-    }
+        alert(`Player ${playerTurn} has won!`);
 };
+
+
+console.log(makeAMove());
