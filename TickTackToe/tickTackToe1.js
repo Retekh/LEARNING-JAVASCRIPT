@@ -88,15 +88,28 @@ function enterValue2() {
 
            else {
            /** Now it adds the players number to their own array. */
+/**Player X */
+        if (turn % 2  == 0 && playerArrayX.includes(playerValue) == true) {
+            turn--
+            alert('Choose another number! You already went there.');
+        }
 
-        if (turn % 2  == 0 && playerArrayO.includes(playerValue) == false) {
+        else if (turn % 2  == 0 && playerArrayO.includes(playerValue) == false) {
             playerArrayX.push(playerValue);
             player = 'O';
         }
+
         else if (turn % 2  == 0 && playerArrayO.includes(playerValue) == true){
             turn--
             alert('Choose another number! Player O already went there.');
         }
+
+/**Player O */
+        else if (turn % 2  == 1 && playerArrayO.includes(playerValue) == true) {
+            turn--
+            alert('Choose another number! You already went there.');
+        }
+
         else if (turn % 2  == 1 && playerArrayX.includes(playerValue) == false) {
             playerArrayO.push(playerValue);
             player = 'X';
