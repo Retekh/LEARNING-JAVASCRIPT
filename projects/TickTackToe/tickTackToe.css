@@ -75,7 +75,7 @@ h1 {
     height: 150px;
 
     position: fixed;
-    left: 400px;
+    left: 300px;
 }
 
 #line2 {
@@ -83,14 +83,14 @@ h1 {
     height: 150px;
 
     position: fixed;
-    left: 433px;
+    left: 333px;
 }
 #line3 {
     border-bottom: 2px solid brown;
     width: 150px;
 
     position: fixed;
-    left: 345px;
+    left: 245px;
     top: 360px;
 }
 #line4 {
@@ -98,7 +98,7 @@ h1 {
     width: 150px;
 
     position: fixed;
-    left: 345px;
+    left: 245px;
     top: 400px;
 }
 
