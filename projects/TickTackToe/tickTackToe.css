@@ -6,7 +6,7 @@
 
 body {
 
-    background-color: grey;
+    background-color: lightblue;
 }
 
 /** Heading **/
@@ -53,7 +53,7 @@ header {
     justify-content: space-around;
     align-items: center;
 
-    height: 700px;
+    height: 750px;
 
     background-color: white;
     border-bottom: 1px solid black;
@@ -114,4 +114,11 @@ header {
 
 .js-winner {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+aside {
+    margin-top: 40px;
+    margin-left: 40px;
+    font-weight: medium;
+    font-family:Arial, Helvetica, sans-serif;
 }
