@@ -1,30 +1,34 @@
-let gameBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let playerTurn = 'O';
-function whosMoveIsIt () {
-    if(playerTurn == 'X') {
-        return 'O';
-    } else {
-        return 'X';
-    }
+let gameBoard = new Array(9).fill(null);
+let playerTurn = 'X';
 
+const $cellList = document.querySelectorAll('.js-cell');
+const $jswinner = document.querySelector('.js-winner');
+const $playerTurn = document.querySelector('.playerTurn');
+$playerTurn.innerText = `Player turn: X\n\n`;
+function clickHandler(event) {
+    let boardIndex = event.target.dataset.index;
+    if(gameBoard[boardIndex] === null) {
+    gameBoard[boardIndex] = playerTurn;
+    event.target.innerText = playerTurn;
+    if(hasPlayerWon(playerTurn, gameBoard)) {
+        $jswinner.innerText = `\nPlayer ${playerTurn} has won!`;
+    }
+    else if(gameBoard.every((element) => element !== null)) {
+        $jswinner.innerHTML = "Draw. Game over!";
+    }
+    else {
+        playerTurn = playerTurn === "X" ? "O" : "X";
+        $playerTurn.innerText = `Player turn: ${playerTurn}\n\n`;
+    }
+    }
+   
+    
 }
 
-
-
-function makeAMove() {
-    
-   do {
-            let lastMove = prompt(`Make a move ${whosMoveIsIt()}: \n${GameBoardDisplay(gameBoard)} `);
-            gameBoard.splice(lastMove - 1, 1, whosMoveIsIt());
-            playerTurn = whosMoveIsIt();
-        } while (!hasPlayerWon(playerTurn, gameBoard))
-
-        if(hasPlayerWon(playerTurn, gameBoard)) {
-            return gameOver();
-        }
-};
-
-
+for(let $cell of $cellList) {
+    $cell.addEventListener('click', clickHandler);
+    console.log($cell);
+}
 
 function hasPlayerWon(playerTurn, gameBoard) {
     let winnerCombos = [
@@ -50,10 +54,6 @@ return false;
 };
 
 
-function gameOver() {
-        alert(`Player ${playerTurn} has won!`);
-};
-
 function GameBoardDisplay (gameBoard) { 
 
     let gameBoardDisplay = '';
@@ -68,14 +68,6 @@ function GameBoardDisplay (gameBoard) {
     }
     return gameBoardDisplay;
 }
-console.log(makeAMove());
 
-let boardToHTML = GameBoardDisplay(gameBoard);
-boardToHTML = boardToHTML.replace(/\n/g, "<br><br>");
-boardToHTML = boardToHTML.replace(/X/g, "X &nbsp;&nbsp;");
-boardToHTML = boardToHTML.replace(/O/g, "O &nbsp;&nbsp;");
-boardToHTML = boardToHTML.replace(/-/g, "— &nbsp;&nbsp;");
-boardToHTML = boardToHTML.replace(/\d/g, "— &nbsp;&nbsp;");
-document.querySelector('h1').innerHTML = 'Tick Tack Toe Game!';
-document.querySelector('p').innerHTML = `\n ${boardToHTML}`
-console.log(GameBoardDisplay(gameBoard));
+
+
