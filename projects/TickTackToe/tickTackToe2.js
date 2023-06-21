@@ -39,7 +39,8 @@ function hasPlayerWon(playerTurn, gameBoard) {
         [1, 4, 7],
         [2, 5, 8],
         [0, 4, 8],
-        [3, 5, 7]
+        [2, 4, 6]
+        
 ];
 
 for(let [i1, i2, i3] of winnerCombos) {

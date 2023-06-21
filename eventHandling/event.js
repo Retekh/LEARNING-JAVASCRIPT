@@ -1,23 +1,30 @@
-const $button = document.querySelector('.js-button');
-const $link = document.querySelector('.js-link');
-const $form = document.querySelector('form');
+// Event Handlers
 
+document.addEventListener('DOMContentLoaded', init);
 
-function clickHandler() {
-    event.preventDefault();
-    alert('Clicked');
+function init() {
+    const $button = document.querySelector('.js-button');
+    const $link = document.querySelector('.js-link');
+    const $form = document.getElementById('js-txt');
+
+    $button.addEventListener('click', buttonClicked);
+
+    $link.addEventListener('click', event=>{
+        event.preventDefault();
+        console.log(event.type, event.target, event.currentTarget);
+    });
+
+    $form.addEventListener('input', event=>{
+        console.log(event.target, event.target.value);
+    });
+
+    $form.addEventListener('blur', event=>(console.log(event.type)));
+
+    $form.addEventListener('change', event=>(console.log(event.type, event.target, event.currentTarget)));
 }
 
-function submitHandler() {
-    event.preventDefault();
 
-    const $input = document.querySelector('[name=token-name]');
-alert($input.value);
-$input.value = '';
 
-}
-
-$button.addEventListener('click', clickHandler);
-$link.addEventListener('click', clickHandler);
-$form.addEventListener('submit', submitHandler);
-
+function buttonClicked(event) {
+    console.log(event.type, event.target, event.currentTarget);
+};

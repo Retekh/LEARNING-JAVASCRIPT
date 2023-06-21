@@ -20,10 +20,10 @@ header {
 
     
     box-shadow: 4px 4px 6px black;
-    background-color:whitesmoke;
+    background-color:white;
 
     font-family:Arial, Helvetica, sans-serif;
-    color: lightblue;
+    color: black;
     font-size: xx-large;
     font-weight:bolder;
     
@@ -42,7 +42,7 @@ header {
     padding-right: 40px;
     align-self: center;
     text-decoration: none;
-    color: lightblue;
+    color: black;
 }
 
 /** First Row Box Styles**/
@@ -55,7 +55,7 @@ header {
 
     height: 750px;
 
-    background-color: white;
+    background-color: whitesmoke;
     border-bottom: 1px solid black;
     box-shadow: 2px 2px 6px black;
 
