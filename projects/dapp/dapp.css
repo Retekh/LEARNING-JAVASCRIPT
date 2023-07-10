@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 1vh;
+    margin-left: 5vh;
+
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 60%;
+    height: 100px;
+    margin-top: 25px;
+    margin-left: 25px;
+
+    background-color: #d4c5e9;
+    border: 1px solid black;
+}
+
+.select_fromCoin_container, .select_toCoin_container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+
+.select_fromCoin, .select_toCoin {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.from_coins {
+    position:absolute;
+    width: 30vh;
+    height: 30vh;
+
+    margin-top: 2vh;
+    margin-left: 24.1vh;
+
+
+    text-align: center;
+    list-style: inside;
+
+    border: 1px solid black;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    background-color: pink;
+}
+
+.hamburger1, .hamburger2 {
+    width: 2.5vh;
+    height: 20px;
+} 
+
+.hr {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    color: black;
+}
+
+.translateOffScreen {
+    transform: translate(-2vh);
+    font-weight: bolder;
+}
+
+.select_toCoin, .select_fromCoin {
+    width: 12vh;
+    padding-right: 5px;
+
+    text-align: right;
+    font-family:'Times New Roman', Times, serif;
+
+    background-color: whitesmoke;
+}
+
+.form {
+    width: 20vh;
+    height: 30px;
+
+    background-color: whitesmoke;
+}
+
