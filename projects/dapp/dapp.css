@@ -39,24 +39,34 @@ h1 {
 
 }
 
+.select_from {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: medium;
+
+    align-self:flex-end;
+}
+
+.select_to {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: medium;
+
+    align-self:flex-end;
+}
+
 .from_coins {
     position:absolute;
     width: 30vh;
-    height: 30vh;
 
     margin-top: 2vh;
     margin-left: 24.1vh;
+}
 
+.to_coins {
+    position:absolute;
+    width: 30vh;
 
-    text-align: center;
-    list-style: inside;
-
-    border: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-
-    background-color: pink;
+    margin-top: 2vh;
+    margin-left: 24.1vh;
 }
 
 .hamburger1, .hamburger2 {
@@ -64,15 +74,61 @@ h1 {
     height: 20px;
 } 
 
+.coin_from_list_container {
+    width: 25vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    border: 1px solid black;
+    border-bottom: none;
+    background-color: white;
+}
+
+.coin_to_list_container {
+    width: 25vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    transform: translate(-200vh);
+
+    border: 1px solid black;
+    border-bottom: none;
+    background-color: white;
+}
+
+button {
+    flex: 1 1 100%;
+
+
+    text-decoration: none;
+    text-align: center;
+    list-style: none;
+
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+
+
+}
+
+
 .hr {
     background-color: black;
-    width: 40px;
-    height: 40px;
     color: black;
+    width: 100%;
+    height: 1px;
 }
 
 .translateOffScreen {
-    transform: translate(-2vh);
+    transform: translate(-200vh);
     font-weight: bolder;
 }
 

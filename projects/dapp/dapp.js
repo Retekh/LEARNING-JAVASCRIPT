@@ -1,22 +1,32 @@
 const $hamburger1 = document.querySelector('.hamburger1');
 const $hamburger2 = document.querySelector('.hamburger2');
 const $from_coins = document.querySelector('.from_coins');
+const $to_coins = document.querySelector('.to_coins');
+const $select_from = document.querySelector('.select_from');
+const $select_to = document.querySelector('.select_to');
 const $hr = document.createElement('HR');
 $hr.classList.add('hr')
 console.log($hr);
 
-$from_coins.classList.add('translateOffScreen')
+$from_coins.classList.add('translateOffScreen');
+$to_coins.classList.add('translateOffScreen');
+
 let paprikaApi = 'https://api.coinpaprika.com/v1/coins';
 
 async function getCoinPaprika() {
     let response = await fetch(paprikaApi);
     let data = await response.json();
-    let coinList = Object.values(data)
-        .filter(x => x.rank == 1 || x.rank == 2 || x.rank == 3)
-        .map(x => `<li>${x.name}</li>${document.body.appendChild($hr)}`)
+    let coinList_from = Object.values(data)
+        .filter(x => x.rank == 1 || x.rank == 2 || x.rank == 5)
+        .map(x => `<button onclick='buttonClicked1("${x.name}")'>${x.name}</button>`)
         .join('');
-    $from_coins.innerHTML = `
-<ol>${coinList}</ol>`;
+    let coinList_to = Object.values(data)
+        .filter(x => x.rank == 1 || x.rank == 2 || x.rank == 5)
+        .map(x => `<button onclick='buttonClicked2("${x.name}")'>${x.name}</button>`)
+        .join('');
+    $from_coins.innerHTML = `<div class='coin_from_list_container'>${coinList_from}</div>`;
+    $to_coins.innerHTML = `<div class='coin_from_list_container'>${coinList_to}</div>`;
+
      
 }
 
@@ -150,6 +160,8 @@ let my_hamburger2 = new hamburger();
 my_hamburger1.draw(ctx1);
 my_hamburger2.draw(ctx2);
 
+
+// Event Listeners
 canvas1.addEventListener('click', hamburgerEvent);
 canvas2.addEventListener('click', hamburgerEvent);
 canvas1.addEventListener('click', menuEvent);
@@ -166,11 +178,15 @@ function hamburgerEvent(ev) {
     if (item_clicked === 'canvas1') {
         update1()
         ctx1.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        $from_coins.classList.remove('translateOffScreen');
+
         
     }
     else {
         update2()
-        ctx2.clearRect(0, 0, window.innerWidth, window.innerHeight)
+        ctx2.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        $to_coins.classList.remove('translateOffScreen');
+
 
     }
 }
@@ -231,4 +247,12 @@ function update2() {
 
 }
 
+function buttonClicked1(coin) {
+    $select_from.innerText = `${coin}`;
+    console.log(coin);
+}
 
+function buttonClicked2(coin) {
+    $select_to.innerText = `${coin}`;
+    console.log(coin);
+}
