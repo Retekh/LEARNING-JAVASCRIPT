@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightcoral;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+
+    
+    padding-left: 40px;
+    height: 80px;
+
+    background-color: white;
+    box-shadow: 0px 1px 6px black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+ol {
+    width: 190px;
+    height: 90vh;
+    padding-left: 35px;
+    padding-top: 10px;
+
+    box-shadow: 1px 4px 6px black;
+    background-color: lightgreen;
+
+}
