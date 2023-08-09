@@ -1,151 +1,201 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
 }
 
 h1 {
-    margin-top: 1vh;
-    margin-left: 5vh;
-
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.container {
     display: flex;
+    align-items: center;
+    padding: 24px;
+
+    height: 10vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    background-color: #d2afff;
+
+}
+.crypto_converter_container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 
-    width: 60%;
-    height: 100px;
-    margin-top: 25px;
-    margin-left: 25px;
+    width: 100vh;
+    height: 45vh;
 
-    background-color: #d4c5e9;
-    border: 1px solid black;
+    margin-top: 20vh;
+    margin-left: 10%;
+    padding: 5vh;
+
+    background-color: #e6d7ff;
 }
 
-.select_fromCoin_container, .select_toCoin_container {
+.from_container, .to_container {
+    background-color: #d2afff;
+
+    padding: 2vh;
+}
+
+.from_menu, .to_menu, .decimals {
+    background-color: white;
 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1vh 1vh;
+    width: 30vh;
+    height: 5vh;
+
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+
+      
+
 }
 
-.select_fromCoin, .select_toCoin {
+.from_arrow, .to_arrow {
+    width: 0px;
+    height: 0px;
+
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid black;
+
+    cursor: pointer;
+
+    
+}
+
+.decimals {
+    margin-top: 1vh;
+}
+
+.from_list.active, .to_list.active {
+    
+    left:auto;
+}
+
+.from_list, .to_list {
     display: flex;
     flex-wrap: wrap;
 
-}
-
-.select_from {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: medium;
-
-    align-self:flex-end;
-}
-
-.select_to {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: medium;
-
-    align-self:flex-end;
-}
-
-.from_coins {
-    position:absolute;
+    left: -100%;
+    position:fixed;
     width: 30vh;
+    
+    
 
-    margin-top: 2vh;
-    margin-left: 24.1vh;
 }
 
-.to_coins {
-    position:absolute;
-    width: 30vh;
-
-    margin-top: 2vh;
-    margin-left: 24.1vh;
-}
-
-.hamburger1, .hamburger2 {
-    width: 2.5vh;
-    height: 20px;
-} 
-
-.coin_from_list_container {
-    width: 25vh;
-
-    font-family: Arial, Helvetica, sans-serif;
+ol {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
-    border: 1px solid black;
-    border-bottom: none;
+    margin-top: 1px;
+    width: 100%;
+    
     background-color: white;
-}
-
-.coin_to_list_container {
-    width: 25vh;
-
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    transform: translate(-200vh);
-
-    border: 1px solid black;
-    border-bottom: none;
-    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
 }
 
 button {
-    flex: 1 1 100%;
-
-
-    text-decoration: none;
-    text-align: center;
-    list-style: none;
-
-    background-color: white;
-    border: none;
-    border-bottom: 1px solid black;
-    cursor: pointer;
-
-
-
-}
-
-
-.hr {
-    background-color: black;
-    color: black;
     width: 100%;
-    height: 1px;
+    background-color:transparent;
+    border: none;
+
 }
 
-.translateOffScreen {
-    transform: translate(-200vh);
+button:hover {
+    background-color: #e6d7ff;
+}
+
+
+ .from_value, .to_value {
+    background-color: white;
+
+    width: 30vh;
+    padding: 1vh 1vh;
+    margin-top: 5px;
+
+    border-radius: 5px;
+
+
+}
+
+.equals {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+
+    margin-bottom: 2.5vh;
+    width: 4.5vh;
+    
+
     font-weight: bolder;
+    font-size: xx-large;
+    color: white;
+    background-color: #d2afff;
 }
 
-.select_toCoin, .select_fromCoin {
-    width: 12vh;
-    padding-right: 5px;
+.gas_quote_container {
+    display: flex;
+    margin-left: 59%;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+    flex-wrap: wrap;
 
-    text-align: right;
-    font-family:'Times New Roman', Times, serif;
+    flex: 1 1 100%;
+    
+    height: 6vh;
+
+}
+
+.gas_quote {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 5vh;
+    padding: 3vh;
+
+    background-color: #d2afff;   
+     
+}
+
+.gas, .get_quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5vh;
 
     background-color: whitesmoke;
+    border-radius: 5px;
+  
+
 }
 
-.form {
-    width: 20vh;
-    height: 30px;
+.gas {
+    justify-content: flex-start;
 
-    background-color: whitesmoke;
+    padding-left: 5px;
+    width: 17vh;
+
 }
+
+.get_quote {
+    width: 6vh;
+
+    border: none;
+
+}
+
+
 

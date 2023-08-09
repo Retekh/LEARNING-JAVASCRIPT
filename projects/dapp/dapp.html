@@ -2,59 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decentralized App</title>
-    <link rel="stylesheet" href="dapp.css">
+    <title>Dapp Crypto Converter</title>
+    <link rel="stylesheet" href="./dapp.css">
+    <script src="./dapp.js" type="module"></script>
 </head>
 <body>
     
-<h1>Crypto converter</h1>
+<header>
+    <h1>Crypto Converter</h1>
+</header>
 
-<div class="container">
-<!--Input container -->
-    <div class="input_container">
 
-        <div class="select_fromCoin_container">
 
-            <div class="type">From: </div>
-            <div class="select_fromCoin">
-                <div class="hamburger1"></div>
-                <div class="select_from">Select Coin</div>
-                
+    <div class="crypto_converter_container">
+        <div class="from_container">
+            
+            <div class="from_menu">
+                <div class="from_coin row1">Bitcoin</div>
+                <div class="from_arrow row1"></div>
             </div>
-            <div class="from_coins"></div>
+
+            <div class="from_list"></div>
+            <div class="from_value">1</div>
+            <div class="from_decimals decimals">Decimals: </div>
+
         </div>
-          
-        <div class="form input">
-            <div class="from_coin"></div> 
-        </div>
-         
 
-    </div>
-<!--Output container-->
-    <div class="output_container">
+        <div class="equals">=</div>
 
-        <div class="select_toCoin_container">
-
-            <div class="type">To: </div>
-            <div class="select_toCoin">
-                <div class="hamburger2"></div>
-                <div class="select_to">Select Coin</div>
+        <div class="to_container">
+            
+            <div class="to_menu">
+                <div class="to_coin row1">Ethereum</div>
+                <div class="to_arrow row1"></div>
             </div>
-            <div class="to_coins"></div>
+            <div class="to_list"></div>
+            <div class="to_value">10430569</div>
+            <div class="to_decimals decimals">Decimals:</div>
 
         </div>
-        <div class="form output">
-            <div class="to_coin"></div>
+
+        <div class="gas_quote_container">
+            <div class="gas_quote">
+            <div class="gas">Gas: </div>
+            <button class="get_quote">Quote</button>
+            </div>
         </div>
-        
     </div>
 
-    
-
-</div>
 
 
-    <script src="./dapp.js"></script>
+
+
+
+
+
 </body>
 </html>
